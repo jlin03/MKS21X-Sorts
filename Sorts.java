@@ -6,11 +6,11 @@ public class Sorts {
 				min = i;
 			}
 		}
+		int val = ary[min];
 		for(int i = min;i >= 0;i++) {
 			ary[i] = ary[i-1];
 		}
-		
-		
+		ary[0] = val;
 	}
 	
 	
