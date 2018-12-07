@@ -25,14 +25,29 @@ public class Sorts {
   */
   public static void bubbleSort(int[] data){
 		if(data.length > 0) {
-			for(int l = 0; l < data.length;l++) {
+			boolean recip = true;
+			boolean allT = false;
+			int l = 0;
+			while(recip) {
+				recip = true;
+				allT = true;
 				for(int i = 0; i < data.length - 2 - l;i++) {
 					if(data[i] > data[i+1]) {
 						int temp = data[i];
 						data[i] = data[i+1];
 						data[i+1] = temp;
+						allT = false;						//if the array isn't fully sorted, keep the loop
 					}
 				}
+
+				if(!allT) {				//if the array is already sorted stop looping
+					recip = true;
+				}
+				else {
+					recip = false;
+				}
+
+				l++;
 			}
 		}
 	}
