@@ -29,8 +29,7 @@ public class Sorts {
 			boolean allT = false;
 			int l = 0;
 			while(recip) {
-				recip = true;
-				allT = true;
+				allT = true; //assume the array is already sorted
 				for(int i = 0; i < data.length - 2 - l;i++) {
 					if(data[i] > data[i+1]) {
 						int temp = data[i];
