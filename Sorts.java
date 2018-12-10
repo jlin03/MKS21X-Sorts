@@ -52,6 +52,22 @@ public class Sorts {
 	}
 
 
+	public static void insertionSort(int[] data) {
+		int pos;
+		int val;
+		for(int i = 0; i < data.length;i++) {
+			for(int index = i-1; data[index] < data[i] || i < 0; index--) {
+				pos = index;
+			}
+			val = data[i];
+			for(int shift = pos + 1; shift <= i;shift++) {
+				data[shift] = data[shift - 1];
+			}
+			data[pos] = val;
+		}
+	}
+
+
 
 
 }
