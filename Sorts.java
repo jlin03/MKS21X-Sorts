@@ -53,10 +53,10 @@ public class Sorts {
 
 
 	public static void insertionSort(int[] data) {
-		int pos;
-		int val;
-		for(int i = 0; i < data.length;i++) {
-			for(int index = i-1; data[index] < data[i] || i < 0; index--) {
+		int pos = 0;
+		int val = 0;
+		for(int i = 1; i < data.length;i++) {
+			for(int index = i-1; index >= 0 && data[index] > data[i]; index--) {
 				pos = index;
 			}
 			val = data[i];
@@ -65,6 +65,17 @@ public class Sorts {
 			}
 			data[pos] = val;
 		}
+	}
+	
+	public static void main(String[] args) {
+		int[] ary = {6,1,41,15,2,7,3,2,1,9,5,2,3,8,6,1,41,73,65,3,8,536,2,5,42,5,78,52,26,56};
+		Sorts.insertionSort(ary);
+		for(int i = 0; i < ary.length;i++) {
+			System.out.print(ary[i] + " ");
+			
+		}
+		
+		
 	}
 
 
