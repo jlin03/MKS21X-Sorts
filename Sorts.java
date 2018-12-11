@@ -56,14 +56,21 @@ public class Sorts {
 		int pos = 0;
 		int val = 0;
 		for(int i = 1; i < data.length;i++) {
+			pos = i;
 			for(int index = i-1; index >= 0 && data[index] > data[i]; index--) {
 				pos = index;
 			}
 			val = data[i];
-			for(int shift = pos + 1; shift <= i;shift++) {
-				data[shift] = data[shift - 1];
+			if(pos != i) {
+				for(int shift = i; shift > pos;shift--) {
+					data[shift] = data[shift - 1];
+				}
+				data[pos] = val;
 			}
-			data[pos] = val;
+			for(int x = 0; x < data.length;x++) {
+				System.out.print(data[x] + " ");
+			}
+			System.out.print("\n");
 		}
 	}
 	
